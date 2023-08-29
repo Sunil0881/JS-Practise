@@ -4,22 +4,7 @@
 	<link rel="stylesheet" href="styles.css">
 	<title>Login page</title>
 </head>
-<script type="text/javascript">
-	var input = document.getElementById("password");
 
-	
-	function display(form) {
-		if (form.username.value == "root") {
-			if (form.password.value == "root") {
-				location = "page2.html"
-			} else {
-				alert("Invalid Password")
-			}
-		} else {
-			alert("Invalid Username")
-		}
-	}
-</script>
 
 <body>
 	<div class="container">
@@ -41,6 +26,7 @@
 					<input class="button__icon fas fa-chevron-right" id="button" type="button" value="Login" onClick="display(this.form)"/>
 
 				</form>
+				<button id="forgotPasswordBtn">Forgot Password</button>
 
 			</div>
 			<div class="screen__background">
@@ -52,5 +38,31 @@
 		</div>
 	</div>
 </body>
+
+<script>
+    const forgotPasswordBtn = document.getElementById('forgotPasswordBtn');
+    
+    forgotPasswordBtn.addEventListener('click', () => {
+      window.location.href = 'hint.html';
+    });
+  </script>
+
+	
+	<script type="text/javascript">
+	var input = document.getElementById("password");
+
+	
+	function display(form) {
+		if (form.username.value == "root") {
+			if (form.password.value == "root") {
+				location = "page2.html"
+			} else {
+				alert("Invalid Password")
+			}
+		} else {
+			alert("Invalid Username")
+		}
+	}
+</script>
 
 </html>
