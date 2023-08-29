@@ -192,3 +192,9 @@ input[type=button] {
 .social-login__icon:hover {
 	transform: scale(1.5);	
 }
+
+button{
+        margin-left: 90px;
+	width: 35%;
+	transition: .2s;
+}
