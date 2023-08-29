@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const slides = document.querySelectorAll('.slide');
-        let currentSlideIndex = 0;
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.style.display = 'none');
-            slides[index].style.display = 'block';
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-            showSlide(currentSlideIndex);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            showSlide(currentSlideIndex);
-        });
-
-        // Initial display
-        showSlide(currentSlideIndex);
-    </script>
-
 
 
     <style>
         .slider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        .image-container {
-            overflow: hidden;
-        }
+.image-container {
+  overflow: hidden;
+}
 
-        .slide {
-            width: 100%;
-            height: auto;
-            display: none;
-        }
+.slide {
+  width: 100%;
+  height: auto;
+  display: none;
+}
 
-        button {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
     </style>
 </head>
-
 <body>
+
     <div class="slider">
         <button id="prevBtn">Previous</button>
         <div class="image-container">
-            <img class="slide" src="brain.png" alt="Image 1">
-            <img class="slide" src="children.jpeg" alt="Image 2">
-            <img class="slide" src="learn.jpeg" alt="Image 3">
-            <!-- Add more images as needed -->
+          <img class="slide" src="learn.jpeg" alt="Image 1">
+          <img class="slide" src="children.jpeg" alt="Image 2">
+          <img class="slide" src="brain.png" alt="Image 3">
+          <!-- Add more images as needed -->
         </div>
         <button id="nextBtn">Next</button>
-    </div>
+      </div>
 
+      <script>
+        const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const slides = document.querySelectorAll('.slide');
+let currentSlideIndex = 0;
 
+function showSlide(index) {
+  slides.forEach(slide => slide.style.display = 'none');
+  slides[index].style.display = 'block';
+}
+
+prevBtn.addEventListener('click', () => {
+  currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+  showSlide(currentSlideIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+  showSlide(currentSlideIndex);
+});
+
+// Initial display
+showSlide(currentSlideIndex);
+
+      </script>
+      
+    
 </body>
-
 </html>
