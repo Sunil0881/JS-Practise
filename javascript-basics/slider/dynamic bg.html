@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .color-box {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #000;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="colorInput" placeholder="Enter a color">
+  <div class="color-box" id="colorDiv">
+    <p>Color Preview</p>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#colorInput").on("input", function() {
+        let inputColor = $(this).val();
+        $("#colorDiv").css("background-color", inputColor);
+        $("#colorDiv p").text("Color Preview: " + inputColor);
+      });
+    });
+  </script>
+</body>
+</html>
